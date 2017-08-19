@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable
+//@IBDesignable
 class GradientView: UIView {
 
     @IBInspectable var topColor : UIColor = #colorLiteral(red: 0, green: 0.7843137255, blue: 0.3254901961, alpha: 1) {
