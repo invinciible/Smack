@@ -12,6 +12,8 @@
 		6F189BE31F4849CF000FA2CC /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F189BE21F4849CF000FA2CC /* CreateAccountVC.swift */; };
 		6F2C6A5C1F49690900F598E1 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2C6A5B1F49690900F598E1 /* RoundedButton.swift */; };
 		6F2C6A5E1F49855B00F598E1 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2C6A5D1F49855B00F598E1 /* UserDataService.swift */; };
+		6F2C6A601F49A9FD00F598E1 /* AvatarPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2C6A5F1F49A9FD00F598E1 /* AvatarPickerVC.swift */; };
+		6F2C6A621F49AB8600F598E1 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2C6A611F49AB8600F598E1 /* AvatarCell.swift */; };
 		6F43592D1F480BFA00392B43 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F43592C1F480BFA00392B43 /* ChatVC.swift */; };
 		6F4359301F480C0E00392B43 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F43592F1F480C0E00392B43 /* ChannelVC.swift */; };
 		6F4359311F480E2D00392B43 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F43592A1F480B5900392B43 /* SWRevealViewController.m */; };
@@ -32,6 +34,8 @@
 		6F189BE21F4849CF000FA2CC /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		6F2C6A5B1F49690900F598E1 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		6F2C6A5D1F49855B00F598E1 /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
+		6F2C6A5F1F49A9FD00F598E1 /* AvatarPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPickerVC.swift; sourceTree = "<group>"; };
+		6F2C6A611F49AB8600F598E1 /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
 		6F4359291F480B5800392B43 /* Smack-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smack-Bridging-Header.h"; sourceTree = "<group>"; };
 		6F43592A1F480B5900392B43 /* SWRevealViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		6F43592B1F480B5900392B43 /* SWRevealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 				6F43592F1F480C0E00392B43 /* ChannelVC.swift */,
 				6F189BDD1F483C7F000FA2CC /* LoginVC.swift */,
 				6F189BE21F4849CF000FA2CC /* CreateAccountVC.swift */,
+				6F2C6A5F1F49A9FD00F598E1 /* AvatarPickerVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -103,6 +108,7 @@
 			children = (
 				6F4359321F48128500392B43 /* GradientView.swift */,
 				6F2C6A5B1F49690900F598E1 /* RoundedButton.swift */,
+				6F2C6A611F49AB8600F598E1 /* AvatarCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -283,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F43592D1F480BFA00392B43 /* ChatVC.swift in Sources */,
+				6F2C6A601F49A9FD00F598E1 /* AvatarPickerVC.swift in Sources */,
 				6F2C6A5C1F49690900F598E1 /* RoundedButton.swift in Sources */,
 				6F4359301F480C0E00392B43 /* ChannelVC.swift in Sources */,
 				6F2C6A5E1F49855B00F598E1 /* UserDataService.swift in Sources */,
@@ -290,6 +297,7 @@
 				6FAF2D791F48C72600919113 /* AuthService.swift in Sources */,
 				6F189BDE1F483C7F000FA2CC /* LoginVC.swift in Sources */,
 				6F4359331F48128500392B43 /* GradientView.swift in Sources */,
+				6F2C6A621F49AB8600F598E1 /* AvatarCell.swift in Sources */,
 				6F189BE11F483D3B000FA2CC /* Constants.swift in Sources */,
 				6F4371211F47724300EFD8D5 /* AppDelegate.swift in Sources */,
 				6F4359311F480E2D00392B43 /* SWRevealViewController.m in Sources */,
