@@ -14,7 +14,11 @@ class AvatarPickerVC: UIViewController , UICollectionViewDelegate,UICollectionVi
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var segmentControl: UISegmentedControl!
     
+    // variables
     var avatarType = AvatarType.dark
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

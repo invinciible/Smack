@@ -18,7 +18,10 @@ let LOGGED_IN_KEY = "loggedin"
 let TOKEN_KEY = "token"
 let USER_EMAIL = "useremail"
 
-//
+//notifications constants
+let NOTIF_USER_DATA_DID_CHANGE = Notification.Name("notifUserDataChanged")
+
+
 typealias CompletionHandler = (_ Success: Bool) -> ()
 
 // URL
@@ -31,3 +34,6 @@ let ADD_USER = "\(BASE_URL)user/add"
 
 // header
 let HEADER = [ "Content-Type" : "application/json ; charset=utf-8"]
+
+// Colors
+let SMACK_PLACEHOLDER = #colorLiteral(red: 0.3266413212, green: 0.4215201139, blue: 0.7752227187, alpha: 0.5)
