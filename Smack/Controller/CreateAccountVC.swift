@@ -49,11 +49,12 @@ class CreateAccountVC: UIViewController {
         guard let userName = userNameTxt.text , userName != "" else {return}
         AuthService.instance.registerUSer(email: userEmail, password: userPass) { (success) in
             if success {
-                print("registered user!")
+               
                 AuthService.instance.loginUser(email: userEmail, password: userPass, completion: { (success) in
                     if success {
                         AuthService.instance.createUser(name: userName, email: userEmail, avatarName: self.avatarName, avatarColor: self.avatarColor, completion: { (success) in
                             if success {
+                                
                                 self.spinner.isHidden = true
                                 self.spinner.stopAnimating()
                                 self.performSegue(withIdentifier: UNWIND, sender: nil)
@@ -76,7 +77,7 @@ class CreateAccountVC: UIViewController {
         let b = CGFloat(arc4random_uniform(255)) / 255
         
         bgColor = UIColor(red: r, green: g, blue: b, alpha: 1)
-        
+        avatarColor = "[\(r),\(g),\(b),1]"
         UIView.animate(withDuration: 0.2) {
             self.userAvatarImg.backgroundColor = self.bgColor
         }

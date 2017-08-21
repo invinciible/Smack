@@ -28,9 +28,39 @@ class UserDataService {
     }
     
     func setAvatarName(avatarName : String) {
-        
         self.avatarName = avatarName
     }
     
+    // converting the avatarcolor string into uicolor
+    
+    func returnUIColor(components : String) -> UIColor {
+        let scanner = Scanner(string: components)
+        let skipped = CharacterSet(charactersIn: "[],")
+        let comma = CharacterSet(charactersIn: ",")
+        scanner.charactersToBeSkipped = skipped
+        
+        var r,b,g,a : NSString?
+        
+        scanner.scanUpToCharacters(from: comma, into: &r)
+        scanner.scanUpToCharacters(from: comma, into: &b)
+        scanner.scanUpToCharacters(from: comma, into: &g)
+        scanner.scanUpToCharacters(from: comma, into: &a)
+        
+        let defaulColor = UIColor.lightGray
+        
+        guard let rUnwrapped = r else {return defaulColor}
+        guard let bUnwrapped = b else {return defaulColor}
+        guard let gUnwrapped = g else {return defaulColor}
+        guard let aUnwrapped = a else {return defaulColor}
+        
+        let rFloat = CGFloat(rUnwrapped.doubleValue)
+        let bFloat = CGFloat(bUnwrapped.doubleValue)
+        let gFloat = CGFloat(gUnwrapped.doubleValue)
+        let aFloat = CGFloat(aUnwrapped.doubleValue)
+        
+        
+        return UIColor(red: rFloat, green: gFloat, blue: bFloat, alpha: 1)
+        
+    }
     
 }
