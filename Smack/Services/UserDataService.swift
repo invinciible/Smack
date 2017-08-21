@@ -62,7 +62,8 @@ class UserDataService {
         return UIColor(red: rFloat, green: gFloat, blue: bFloat, alpha: aFloat)
         
     }
-    
+
+    // Mark : To logout the user
     func logoutUser() {
         
         id = ""
