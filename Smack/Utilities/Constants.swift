@@ -31,6 +31,7 @@ let REGISTER_URL = "\(BASE_URL)account/register"
 let LOGIN_URL = "\(BASE_URL)account/login"
 let ADD_USER = "\(BASE_URL)user/add"
 let USER_BY_EMAIL = "\(BASE_URL)user/byEmail/"
+let GET_CHANNEL = "\(BASE_URL)/channel/"
 
 // header
 let HEADER = [ "Content-Type" : "application/json ; charset=utf-8"]
