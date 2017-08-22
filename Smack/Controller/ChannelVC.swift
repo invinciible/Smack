@@ -60,7 +60,7 @@ class ChannelVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
         return 1
     }
     
-    
+    // Actions
     @IBAction func loginBtnPressed(_ sender: Any) {
         
         if AuthService.instance.isLoggedIn {
@@ -73,8 +73,13 @@ class ChannelVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
             
             performSegue(withIdentifier: TO_LOGIN, sender: nil)
         }
-        
-        
     }
+    
+    @IBAction func addChannelBtn(_ sender: Any) {
+        let addChannelVC = AddChannelVC()
+        addChannelVC.modalPresentationStyle = .custom
+        present(addChannelVC, animated: true, completion: nil)
+    }
+    
     @IBAction func prepareForUnwind(segue : UIStoryboardSegue){}
 }
