@@ -14,7 +14,9 @@ class MessageService {
     
     static let instance = MessageService()
     
+    // Variables
     var channels = [Channel]()
+    var selectedChannel : Channel?
     
     func findAllChannels(completion : @escaping CompletionHandler){
         
@@ -32,6 +34,7 @@ class MessageService {
                         let channel = Channel(channelName: name, channelId: id, description: channelDescription)
                         self.channels.append(channel)
                         }
+                    NotificationCenter.default.post(name: NOTIF_CHANNELS_LOADED, object: nil)
                     completion(true)
                     }
 //                // swift 4 way of parsig JSON data, we have to make sure that the service has the var in same sequence
@@ -51,4 +54,10 @@ class MessageService {
                     }
                 }
             }
+    // remove channels when we logOut
+    func clearChannels(){
+        channels.removeAll()
+    }
+    
+    
 }
