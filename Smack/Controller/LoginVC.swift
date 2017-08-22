@@ -59,6 +59,7 @@ class LoginVC: UIViewController {
                         self.spinner.isHidden = true
                         self.spinner.stopAnimating()
                         self.dismiss(animated: true, completion: nil)
+                        
                     }
                 })
             }

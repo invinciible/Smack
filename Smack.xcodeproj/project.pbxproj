@@ -17,6 +17,7 @@
 		6F2C6A601F49A9FD00F598E1 /* AvatarPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2C6A5F1F49A9FD00F598E1 /* AvatarPickerVC.swift */; };
 		6F2C6A621F49AB8600F598E1 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2C6A611F49AB8600F598E1 /* AvatarCell.swift */; };
 		6F2C6A641F49C47A00F598E1 /* RoundedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2C6A631F49C47A00F598E1 /* RoundedImage.swift */; };
+		6F4023AF1F4C222100F954AA /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4023AE1F4C222100F954AA /* SocketService.swift */; };
 		6F43592D1F480BFA00392B43 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F43592C1F480BFA00392B43 /* ChatVC.swift */; };
 		6F4359301F480C0E00392B43 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F43592F1F480C0E00392B43 /* ChannelVC.swift */; };
 		6F4359311F480E2D00392B43 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F43592A1F480B5900392B43 /* SWRevealViewController.m */; };
@@ -47,6 +48,7 @@
 		6F2C6A5F1F49A9FD00F598E1 /* AvatarPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPickerVC.swift; sourceTree = "<group>"; };
 		6F2C6A611F49AB8600F598E1 /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
 		6F2C6A631F49C47A00F598E1 /* RoundedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImage.swift; sourceTree = "<group>"; };
+		6F4023AE1F4C222100F954AA /* SocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
 		6F4359291F480B5800392B43 /* Smack-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smack-Bridging-Header.h"; sourceTree = "<group>"; };
 		6F43592A1F480B5900392B43 /* SWRevealViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		6F43592B1F480B5900392B43 /* SWRevealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				6FAF2D781F48C72600919113 /* AuthService.swift */,
 				6F2C6A5D1F49855B00F598E1 /* UserDataService.swift */,
 				6F59314B1F4B703500D0CCAD /* MessageService.swift */,
+				6F4023AE1F4C222100F954AA /* SocketService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F4023AF1F4C222100F954AA /* SocketService.swift in Sources */,
 				6FACA3D21F4ACD4A00C15C1D /* ProfileVC.swift in Sources */,
 				6FF3DFE91F4C0BA9002B4CB5 /* ChannelCell.swift in Sources */,
 				6F43592D1F480BFA00392B43 /* ChatVC.swift in Sources */,

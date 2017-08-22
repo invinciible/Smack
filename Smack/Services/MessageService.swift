@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class MessageService {
     
-    static var instance = MessageService()
+    static let instance = MessageService()
     
     var channels = [Channel]()
     
