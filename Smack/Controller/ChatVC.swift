@@ -13,6 +13,7 @@ class ChatVC: UIViewController {
     
     //outlets
     @IBOutlet weak var menuBtn: UIButton!
+    @IBOutlet weak var messageField: UITextField!
     
     @IBOutlet weak var channelName: UILabel!
     override func viewDidLoad() {
@@ -22,7 +23,10 @@ class ChatVC: UIViewController {
     
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+        view.bindToKeyboard()
         
+        let tap = UITapGestureRecognizer(target: self, action: #selector(ChatVC.handleTap))
+        view.addGestureRecognizer(tap)
         // notifcation observed when user selects the channel
         NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.channelSelected(_:)), name: NOTIF_CHANNEL_SELECTED, object: nil)
         
@@ -37,7 +41,9 @@ class ChatVC: UIViewController {
             })
         }
     }
-
+    @objc func handleTap() {
+        view.endEditing(true)
+    }
     @objc func channelSelected(_ notif : Notification){
         
         updateWithChannel()
@@ -84,5 +90,31 @@ class ChatVC: UIViewController {
         }
         
     }
+    // To send message
+    @IBAction func sendMessagePressed(_ sender: Any) {
+        
+        if AuthService.instance.isLoggedIn {
+            guard let channelId = MessageService.instance.selectedChannel?.channelId else {return}
+            guard let message = messageField.text , messageField.text != "" else {
+                self.messageField.resignFirstResponder() 
+                return}
+            
+            SocketService.instance.addMessage(messageBody: message, userId: UserDataService.instance.id, channelId: channelId, completion: { (success) in
+                
+                if success {
+                    self.messageField.text = ""
+                    self.messageField.resignFirstResponder()
+                }
+            })
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     
 }
