@@ -8,17 +8,22 @@
 
 import UIKit
 
-class ChatVC: UIViewController {
+class ChatVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
 
     
     //outlets
     @IBOutlet weak var menuBtn: UIButton!
     @IBOutlet weak var messageField: UITextField!
-    
     @IBOutlet weak var channelName: UILabel!
+    @IBOutlet weak var tableView : UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.estimatedRowHeight = 80
+        tableView.rowHeight = UITableViewAutomaticDimension
         menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
     
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
@@ -48,7 +53,24 @@ class ChatVC: UIViewController {
         
         updateWithChannel()
     }
+    // message table view update
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath) as? MessageCell {
+            
+            let message = MessageService.instance.messages[indexPath.row]
+            cell.configureCell(message: message)
+            return cell
+        }
+        return UITableViewCell()
+    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return MessageService.instance.messages.count
+    }
     
     func updateWithChannel(){
         
@@ -85,7 +107,9 @@ class ChatVC: UIViewController {
         guard let channelId = MessageService.instance.selectedChannel?.channelId else {return}
         
         MessageService.instance.findAllMessageForChannel(channelId: channelId) { (success) in
-            
+            if success {
+                self.tableView.reloadData()
+            }
             
         }
         
