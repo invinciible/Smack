@@ -16,10 +16,11 @@ class ChatVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var messageField: UITextField!
     @IBOutlet weak var channelName: UILabel!
     @IBOutlet weak var tableView : UITableView!
-    
+    @IBOutlet weak var sendBtn: UIButton!
+    var isTyping = false
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        sendBtn.isHidden = true
         tableView.delegate = self
         tableView.dataSource = self
         tableView.estimatedRowHeight = 80
@@ -37,6 +38,17 @@ class ChatVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
         
         NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
         
+        SocketService.instance.getChatMessage { (success) in
+            if success {
+                self.tableView.reloadData()
+             
+              if MessageService.instance.messages.count > 0 {
+                       let endIndex = IndexPath(row: MessageService.instance.messages.count - 1, section: 0)
+                    self.tableView.scrollToRow(at: endIndex, at: .bottom , animated: false)
+                }
+                
+            }
+        }
         if AuthService.instance.isLoggedIn {
             AuthService.instance.findUserByEmail(completion: { (success) in
                
@@ -85,6 +97,7 @@ class ChatVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
             onLoginGetMessages()
         } else {
             channelName.text = "Please Log in"
+            tableView.reloadData()
         }
     }
     
@@ -132,13 +145,18 @@ class ChatVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
             })
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
+  
+    @IBAction func editing(_ sender: Any) {
+        if messageField.text == "" {
+            isTyping = false
+            sendBtn.isHidden = true
+        } else {
+           if isTyping == false {
+                sendBtn.isHidden = false
+                
+            }
+            isTyping = true
+        }
+    }
     
 }
