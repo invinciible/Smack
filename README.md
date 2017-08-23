@@ -17,6 +17,4 @@ Libraries/Framework/Models Used
 - mLab to store data 
 - Heroku cloud platform as a service
 
-Made by - Tushar 
-with help of https://devslopes.com
 
