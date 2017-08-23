@@ -5,6 +5,18 @@ How does this app work?
 The functionality of this app is really simple,
 - users login to app either with new account or old account 
 - All the channels from the server will be displayed with the messages 
-- users can choose any channel and start sending messages
+- users can choose any channel and start sending and recieving messages
 - users have ability to update their info later 
+
+How is this app useful?
+This app is useful for those who wants to interact with the people having common interests aka channels
+
+Libraries/Framework/Models Used
+- API developed by team devslopes using( Node.js MongoDB )
+- pods : SwiftyJSON , Socket.IO-Client-Swift , Alamofire
+- mLab to store data 
+- Heroku cloud platform as a service
+
+Made by - Tushar 
+with help of https://devslopes.com
 
