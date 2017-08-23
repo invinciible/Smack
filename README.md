@@ -12,7 +12,7 @@ How is this app useful?
 This app is useful for those who wants to interact with the people having common interests aka channels
 
 Libraries/Framework/Models Used
-- API developed by team devslopes using( Node.js MongoDB )
+- API developed by team Devslopes ( Chat App REST API with ES6 and Express(Node.js)
 - pods : SwiftyJSON , Socket.IO-Client-Swift , Alamofire
 - mLab to store data 
 - Heroku cloud platform as a service
