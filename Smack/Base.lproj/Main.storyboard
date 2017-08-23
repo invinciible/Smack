@@ -116,14 +116,25 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ob-1T-J0P">
+                                <rect key="frame" x="259" y="599" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="FVd-NE-8Cf"/>
+                                    <constraint firstAttribute="width" constant="20" id="d9P-D4-yzk"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="edit"/>
+                                <connections>
+                                    <action selector="updateProfileBtn:" destination="ocl-Cn-OhX" eventType="touchUpInside" id="Dey-7t-cfD"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="1OY-R9-C4u" firstAttribute="top" secondItem="1sh-yg-hDr" secondAttribute="bottom" constant="20" id="5fj-hY-90C"/>
                             <constraint firstItem="1sh-yg-hDr" firstAttribute="top" secondItem="QWp-Dd-bKF" secondAttribute="bottom" constant="20" id="9n9-hZ-e8e"/>
                             <constraint firstItem="wdw-7w-s7i" firstAttribute="top" secondItem="1OY-R9-C4u" secondAttribute="bottom" constant="20" id="B5N-Ms-Afe"/>
                             <constraint firstItem="ZIC-w5-FwC" firstAttribute="leading" secondItem="erQ-Ik-9Ip" secondAttribute="leadingMargin" id="FMY-f8-Iok"/>
                             <constraint firstItem="uYq-CV-hmy" firstAttribute="top" secondItem="ZIC-w5-FwC" secondAttribute="bottom" constant="20" id="M76-Xq-KTu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0ob-1T-J0P" secondAttribute="trailing" constant="80" id="MZ4-tv-2Oe"/>
                             <constraint firstItem="xUd-DV-ZM4" firstAttribute="leading" secondItem="1OY-R9-C4u" secondAttribute="trailing" constant="20" id="Q4h-AC-a3r"/>
                             <constraint firstItem="QWp-Dd-bKF" firstAttribute="centerY" secondItem="uYq-CV-hmy" secondAttribute="centerY" id="Qar-HO-Ol1"/>
                             <constraint firstItem="xUd-DV-ZM4" firstAttribute="centerY" secondItem="1OY-R9-C4u" secondAttribute="centerY" id="S59-V5-qG5"/>
@@ -132,6 +143,7 @@
                             <constraint firstItem="uYq-CV-hmy" firstAttribute="leading" secondItem="erQ-Ik-9Ip" secondAttribute="leadingMargin" id="ZXu-nC-f9O"/>
                             <constraint firstItem="1OY-R9-C4u" firstAttribute="leading" secondItem="erQ-Ik-9Ip" secondAttribute="leadingMargin" id="cn3-SP-vWf"/>
                             <constraint firstAttribute="trailing" secondItem="QWp-Dd-bKF" secondAttribute="trailing" constant="80" id="fKG-hE-LVQ"/>
+                            <constraint firstItem="0ob-1T-J0P" firstAttribute="centerY" secondItem="xUd-DV-ZM4" secondAttribute="centerY" id="pN9-vn-5hS"/>
                             <constraint firstAttribute="trailing" secondItem="1sh-yg-hDr" secondAttribute="trailing" id="ytk-9O-PGr"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -714,6 +726,7 @@
     <resources>
         <image name="addChannelButton" width="22" height="22"/>
         <image name="closeButton" width="28" height="28"/>
+        <image name="edit" width="96" height="96"/>
         <image name="menuProfileIcon" width="99" height="99"/>
         <image name="profileDefault" width="192" height="192"/>
         <image name="send" width="30" height="30"/>

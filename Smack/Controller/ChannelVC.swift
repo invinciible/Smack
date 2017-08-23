@@ -23,7 +23,7 @@ class ChannelVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.channelsLoaded(_:)), name: NOTIF_CHANNELS_LOADED, object: nil)
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChange(_:)), name: NOTIF_USERDATA_UPDATE, object: nil)
         SocketService.instance.getChannel { (success) in
             if success {
                 self.tableView.reloadData()
@@ -56,8 +56,6 @@ class ChannelVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
             loginBtn.setTitle(UserDataService.instance.name, for: .normal)
             userImg.image = UIImage(named : UserDataService.instance.avatarName)
             userImg.backgroundColor = UserDataService.instance.returnUIColor(components: UserDataService.instance.avatarColor)
-           
-            
         } else {
             loginBtn.setTitle("Login", for: .normal)
             userImg.image = UIImage(named: "menuProfileIcon")
@@ -124,6 +122,16 @@ class ChannelVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
         present(addChannelVC, animated: true, completion: nil)
         }
     }
+    
+    @IBAction func updateProfileBtn(_ sender: Any) {
+        if AuthService.instance.isLoggedIn {
+            
+            let editProfileVC = EditProfileVC()
+            editProfileVC.modalPresentationStyle = .custom
+            present(editProfileVC, animated: true, completion: nil)
+        }
+    }
+    
     
     @IBAction func prepareForUnwind(segue : UIStoryboardSegue){}
 }

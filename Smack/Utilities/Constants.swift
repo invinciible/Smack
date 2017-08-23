@@ -22,7 +22,7 @@ let USER_EMAIL = "useremail"
 let NOTIF_USER_DATA_DID_CHANGE = Notification.Name("notifUserDataChanged")
 let NOTIF_CHANNELS_LOADED = Notification.Name("channelsLoaded")
 let NOTIF_CHANNEL_SELECTED = Notification.Name("channelSelected")
-
+let NOTIF_USERDATA_UPDATE = Notification.Name("notifUserUpdate")
 typealias CompletionHandler = (_ Success: Bool) -> ()
 
 // URL
@@ -34,6 +34,7 @@ let ADD_USER = "\(BASE_URL)user/add"
 let USER_BY_EMAIL = "\(BASE_URL)user/byEmail/"
 let GET_CHANNEL = "\(BASE_URL)/channel/"
 let GET_MESSAGES = "\(BASE_URL)/message/byChannel/"
+let UPDATE_USER = "\(BASE_URL)/user/"
 
 // header
 let HEADER = [ "Content-Type" : "application/json ; charset=utf-8"]
